@@ -1,20 +1,33 @@
 # Front End Engineer Coding Challenge #
-Create a simple HTML/Javascript page that meets the functional requirements outlined below.  Include any JavaScript libraries or third party components such that the page can be viewed by simply cloning the repository and viewing in a web browser.  You may use any combination of HTML5, CSS, DOM methods and properties, Javascript or jQuery to solve this challenge.
+This is a very fun front end coding test, I've used the HTML,CSS, Javascript and jQuery library to complete the test.
 
-## Requirements ##
-1 second after the page loads fade in a text input field over .5 seconds, set the focus in the input field.
-As soon as the user starts typing in the input field show a button with the text 'Save' next to it.
-At any time the input field is empty the button must be disabled.
+## Setting up and running the application ##
 
-When the input field contains at least one character and the user hits Enter or clicks the button the following happens:
-* The button is disabled and the button text is changed to 'Saving'
-* After one second the button fades out over 1 second
-* One second later the input field fades out over 2 seconds
-* One second later the content of the input field fades in where the input field was over 1 second
+1. Download the project from https://github.com/ptchiangchloe/CodingChallenges
+2. Open index.html in your browser, you need internet access in order to request jQuery.
+3. As you open, you will see the input field, then try it out! :)
 
-## Evaluation ##
-Evaluation of your submission will be based on the following criteria. Additionally, reviewers will attempt to assess your familiarity with standard libraries as well as with language idioms.
+## Questions and Support ##
 
-1. Did your application fulfill the basic requirements?
-2. Did you document the method for setting up and running your application?
-3. Did you follow the instructions for submission?
+If you have any questions about this app, please shot me an E-mail at [ptchiang12@gmail.com]()
+
+## License ##
+Copyright (c) 2017 HANYU JIANG
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

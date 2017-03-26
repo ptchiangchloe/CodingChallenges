@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Front End Engineer Coding Challenge</title>
+   </head>
+   <script
+      src="https://code.jquery.com/jquery-3.2.1.js"
+      integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+      crossorigin="anonymous"></script>
+   </script>
+   <style media="screen">
+     p {
+       position: absolute;
+       top: -10px;
+       left: 10px;
+     }
+   </style>
+   <body>
+      <form onsubmit="myFunction(); return false;">
+         <input type="text" name="input" value="" id="input" autofocus>
+         <button type="submit" name="button" id="btn">Save</button>
+         <p></p>
+      </form>
+      <script type="text/javascript">
+         let $input = $('#input'), $btn = $("#btn"), $p = $('p');
+         let myFunction = function(event){
+             $btn.attr("disabled",true);
+             $btn.html("Saving");
+             $btn.delay(1000).fadeOut(1000);
+             $input.delay(2000).fadeOut(2000);
+             $p.append($("#input").val())
+             $p.delay(3000).fadeIn(1000);
+         }
+         $input.css('display', 'none');
+         $p.css('display', 'none');
+         $(document).ready(function(event){
+         $input.delay(1000).fadeIn(500);
+         $btn.hide();
+         $input.keypress(function(){
+           $btn.show();
+         });
+         $input.keyup(function(){
+             let value=$.trim($(this).val());
+             if(value.length !== 0 && $btn.html() !== "Saving")
+                 $btn.attr('disabled', false);
+             else
+                 $btn.attr('disabled',true);
+           })
+         })
+      </script>
+   </body>
+</html>
