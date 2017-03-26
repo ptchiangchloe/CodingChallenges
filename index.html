@@ -23,15 +23,15 @@
          <p></p>
       </form>
       <script type="text/javascript">
-         let $input = $('#input'), $btn = $("#btn"), $p = $('p');
-         let myFunction = function(event){
+         let $input = $("#input"), $btn = $("#btn"), $p = $("p");
+         let myFunction = function(){
              $btn.attr("disabled",true);
              $btn.html("Saving");
              $btn.delay(1000).fadeOut(1000);
              $input.delay(2000).fadeOut(2000);
-             $p.append($("#input").val())
+             $p.append($("#input").val());
              $p.delay(3000).fadeIn(1000);
-         }
+         };
          $input.css('display', 'none');
          $p.css('display', 'none');
          $(document).ready(function(event){
@@ -42,12 +42,13 @@
          });
          $input.keyup(function(){
              let value=$.trim($(this).val());
-             if(value.length !== 0 && $btn.html() !== "Saving")
-                 $btn.attr('disabled', false);
-             else
-                 $btn.attr('disabled',true);
-           })
-         })
+             if(value.length !== 0 && $btn.html() !== "Saving"){
+               $btn.attr('disabled', false);
+             }else{
+               $btn.attr('disabled',true);
+             }
+           });
+         });
       </script>
    </body>
 </html>
