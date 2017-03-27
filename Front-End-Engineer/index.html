@@ -34,20 +34,24 @@
          };
          $input.css('display', 'none');
          $p.css('display', 'none');
+         let FIREFOX = /Firefox/i.test(navigator.userAgent);
+         if (FIREFOX){
+           $input.focus();
+         }
          $(document).ready(function(event){
-         $input.delay(1000).fadeIn(500);
-         $btn.hide();
-         $input.keypress(function(){
-           $btn.show();
-         });
-         $input.keyup(function(){
-             let value=$.trim($(this).val());
-             if(value.length !== 0 && $btn.html() !== "Saving"){
-               $btn.attr('disabled', false);
-             }else{
-               $btn.attr('disabled',true);
-             }
+           $input.delay(1000).fadeIn(500);
+           $btn.hide();
+           $input.keypress(function(){
+             $btn.show();
            });
+           $input.keyup(function(){
+               let value=$.trim($(this).val());
+               if(value.length !== 0 && $btn.html() !== "Saving"){
+                 $btn.attr('disabled', false);
+               }else{
+                 $btn.attr('disabled',true);
+               }
+             });
          });
       </script>
    </body>

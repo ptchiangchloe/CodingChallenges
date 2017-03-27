@@ -5,6 +5,7 @@ This is a very fun front end coding test, I've used the HTML,CSS, Javascript and
 
 1. Download the project from https://github.com/ptchiangchloe/CodingChallenges
 2. Open index.html in your browser, you need internet access in order to request jQuery.
+(I have tested on Google Chrome Canary59 and Safari10, which all the functions work. I have also tested in IE11 and Firefox48, they both work except the autofocus() function.)
 3. As you open, you will see the input field, then try it out! :)
 
 ## Questions and Support ##
