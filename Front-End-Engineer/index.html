@@ -23,45 +23,51 @@
          <p></p>
       </form>
       <script type="text/javascript">
-      // The reason I don't seperate css and js from html is because it's very simple project, hence,
-      // all in one can reduce the loading time.
+      "use strict";
+      // The reason I don't separate CSS and js from HTML this time is because it's limited codebase, hence,
+      // all in one can be managed in one file and reduce the loading time.
 
-      // I've used jQuery library to accelerate my developing time and ES6 syntax 'let'
-         let $input = $("#input"), $btn = $("#btn"), $p = $("p");
-         let myFunction = function(){
-             $btn.attr("disabled",true);
-             $btn.html("Saving");
-             $btn.delay(1000).fadeOut(1000);
-             $input.delay(2000).fadeOut(2000);
-             $p.append($input.val());
-             $p.delay(3000).fadeIn(1000);
-         };
-         $input.css('display', 'none');
-         $p.css('display', 'none');
+      // I've used jQuery library to accelerate my developing time, which also makes the code very clean
+      // and ES6 syntax 'let'
+      let $input = $("#input"),
+          $btn = $("#btn"),
+          $p = $("p");
+
+      //I like using simple mathematical approach when it comes to counting
+      let myFunction = function() {
+          $btn.attr("disabled", true);
+          $btn.html("Saving");
+          $btn.delay(1000).fadeOut(1000);
+          $input.delay(2000).fadeOut(2000);
+          $p.append($input.val());
+          $p.delay(3000).fadeIn(1000);
+      };
+      $input.css('display', 'none');
+      $p.css('display', 'none');
       // I have tried to solved the focus problem in Firefox, but it seems not functional.
-         let FIREFOX = /Firefox/i.test(navigator.userAgent);
-         if (FIREFOX){
-           $input.focus();
-         }
-       // starting the effect
-         $(document).ready(function(){
-           $input.delay(1000).fadeIn(500);
-           $btn.hide();
-           $input.keypress(function(){
-             $btn.show();
-           });
-           $input.keyup(function(){
-            // In order to eliminating the white space, I use the trim method to accomplish it.
-               let value=$.trim($(this).val());
-            // When I was testing the app, I found ot there is an issue after I hit the enter, the button in 'Saving'
-            // mode is not disabled, so I fix the problem by setting up a if statement with double conditions.
-               if(value.length !== 0 && $btn.html() !== "Saving"){
-                 $btn.attr('disabled', false);
-               }else{
-                 $btn.attr('disabled',true);
-               }
-             });
-         });
+      let FIREFOX = /Firefox/i.test(navigator.userAgent);
+      if (FIREFOX) {
+          $input.focus();
+      }
+      // starting the effect
+      $(document).ready(function() {
+          $input.delay(1000).fadeIn(500);
+          $btn.hide();
+          $input.keypress(function() {
+              $btn.show();
+          });
+          $input.keyup(function() {
+              // In order to eliminate the white space, I use the trim method to accomplish it.
+              let value = $.trim($(this).val());
+              // When I was testing the app, I found out there is an issue after I hit the enter, the button in 'Saving'
+              // mode is not disabled, so I fix the problem by setting up a if statement with double conditions.
+              if (value.length !== 0 && $btn.html() !== "Saving") {
+                  $btn.attr("disabled", false);
+              } else {
+                  $btn.attr("disabled", true);
+              }
+          });
+      });
       </script>
    </body>
 </html>
